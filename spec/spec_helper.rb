@@ -1,5 +1,8 @@
 # frozen_string_literal: true
 
+# Needs to be required first!
+require_relative 'config/simplecov'
+
 require_relative '../app'
 require_relative '../lib'
 
