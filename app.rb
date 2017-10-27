@@ -1,17 +1,19 @@
+# frozen_string_literal: true
+
 require 'sinatra/base'
 require_relative 'lib'
 
 class UnityCloudBuildGithub < Sinatra::Application
   post '/unity-cloud-build' do
-    logger.info "== Received request =="
-    logger.info "Analysing parameters"
+    logger.info '== Received request =='
+    logger.info 'Analysing parameters'
 
     @web_hook_delivery = UnityCloudBuild::WebHookDelivery.new(
       request.body.read,
-      request.get_header("HTTP_X_UNITYCLOUDBUILD_HOOKID"),
-      request.get_header("HTTP_X_UNITYCLOUDBUILD_EVENT"),
-      request.get_header("HTTP_X_UNITYCLOUDBUILD_DELIVERYID"),
-      request.get_header("HTTP_X_UNITYCLOUDBUILD_SIGNATURE")
+      request.get_header('HTTP_X_UNITYCLOUDBUILD_HOOKID'),
+      request.get_header('HTTP_X_UNITYCLOUDBUILD_EVENT'),
+      request.get_header('HTTP_X_UNITYCLOUDBUILD_DELIVERYID'),
+      request.get_header('HTTP_X_UNITYCLOUDBUILD_SIGNATURE')
     )
 
     logger.info "Hook ID header: #{@web_hook_delivery.hook_id}"
