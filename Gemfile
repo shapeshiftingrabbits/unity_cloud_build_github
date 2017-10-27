@@ -6,5 +6,6 @@ gem 'puma', '~> 2.16.0'
 gem 'sinatra', '~> 2.0.0'
 
 group :test do
+  gem 'rack-test', '~> 0.7.0'
   gem 'rspec', '~> 3.7.0'
 end
