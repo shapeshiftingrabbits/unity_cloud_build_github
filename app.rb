@@ -1,5 +1,5 @@
 require 'sinatra'
-require_relative 'lib/unity_cloud_build/web_hook_delivery'
+require_relative 'lib'
 
 post '/unity-cloud-build' do
   logger.info "== Received request =="
