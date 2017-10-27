@@ -1,4 +1,6 @@
-source "https://rubygems.org"
+# frozen_string_literal: true
+
+source 'https://rubygems.org'
 
 ruby '2.4.0'
 
@@ -9,4 +11,5 @@ group :test do
   gem 'rack-test', '~> 0.7.0'
   gem 'rake'
   gem 'rspec', '~> 3.7.0'
+  gem 'rubocop', '~> 0.47.1'
 end

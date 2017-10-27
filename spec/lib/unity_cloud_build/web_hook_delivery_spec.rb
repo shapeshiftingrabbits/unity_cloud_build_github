@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe UnityCloudBuild::WebHookDelivery do
   describe '#initialize' do
     context 'when passing a signature' do

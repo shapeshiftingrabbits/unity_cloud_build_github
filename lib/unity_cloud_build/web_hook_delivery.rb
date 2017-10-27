@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module UnityCloudBuild
   class WebHookDelivery
     attr_reader :body, :hook_id, :event, :delivery_id, :signature
