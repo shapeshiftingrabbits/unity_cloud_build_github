@@ -12,4 +12,5 @@ group :test do
   gem 'rake'
   gem 'rspec', '~> 3.7.0'
   gem 'rubocop', '~> 0.47.1'
+  gem 'simplecov', '~> 0.15.1', require: false
 end
