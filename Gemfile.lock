@@ -9,6 +9,7 @@ GEM
       rack
     rack-test (0.7.0)
       rack (>= 1.0, < 3)
+    rake (12.0.0)
     rspec (3.7.0)
       rspec-core (~> 3.7.0)
       rspec-expectations (~> 3.7.0)
@@ -35,6 +36,7 @@ PLATFORMS
 DEPENDENCIES
   puma (~> 2.16.0)
   rack-test (~> 0.7.0)
+  rake
   rspec (~> 3.7.0)
   sinatra (~> 2.0.0)
 
