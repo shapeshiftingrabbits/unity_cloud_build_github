@@ -23,32 +23,22 @@ class UnityCloudBuildGithub < Sinatra::Application
     logger.info "Body \n#{@web_hook_delivery.body}"
 
     logger.info '== Asking Unity Cloud Build which commit is related to this build event =='
-    unity_cloud_build_api_url = 'https://build-api.cloud.unity3d.com/api/v1'
-
-    url = File.join(
-      unity_cloud_build_api_url,
-      'orgs',
-      "#{@web_hook_delivery.json_body['orgForeignKey']}",
-      'projects',
-      "#{@web_hook_delivery.json_body['projectGuid']}",
-      'buildtargets',
-      '_all',
-      'builds',
-      "#{@web_hook_delivery.json_body['buildNumber']}"
+    build_status_request = UnityCloudBuild::BuildStatusRequest.new(
+      @web_hook_delivery.json_body['orgForeignKey'],
+      @web_hook_delivery.json_body['projectGuid'],
+      @web_hook_delivery.json_body['buildNumber']
     )
 
-    logger.info "Sending request to #{url}..."
-    command = "curl -X GET -H \"Content-Type: application/json\" -H \"Authorization: Basic #{ENV['UNITY_CLOUD_BUILD_AUTH_TOKEN']}\" #{url}"
-    logger.info command
+    logger.info "Sending request to #{build_status_request.request_url}..."
+    logger.info build_status_request.command
 
-    response = `#{command}`
+    build_status_request.call!
     logger.info 'Received response'
-    json = JSON.parse(response)
 
-    logger.info json
+    logger.info build_status_request.json_response_body
 
-    if json['lastBuiltRevision']
-      logger.info "Commit that triggered build is #{json['lastBuiltRevision']}"
+    if build_status_request.json_response_body['lastBuiltRevision']
+      logger.info "Commit that triggered build is #{build_status_request.json_response_body['lastBuiltRevision']}"
     else
       logger.info "ID of commit that triggered the build was not returned in response. Aborting."
     end
