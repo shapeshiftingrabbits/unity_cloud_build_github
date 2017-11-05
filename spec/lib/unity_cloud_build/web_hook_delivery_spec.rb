@@ -36,7 +36,7 @@ RSpec.describe UnityCloudBuild::WebHookDelivery do
       }
 
       it 'returns a valid Hash' do
-        is_expected.to match({
+        is_expected.to match(
           'projectName' => 'MyProject',
           'buildTargetName' => 'My Target Name',
           'projectGuid' => 'aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee',
@@ -44,7 +44,7 @@ RSpec.describe UnityCloudBuild::WebHookDelivery do
           'buildNumber' => 10,
           'buildStatus' => 'success',
           'lastBuiltRevision' => '30d852ea80c5c8e32cb36918e84f654e884e4b12'
-        })
+        )
       end
     end
 

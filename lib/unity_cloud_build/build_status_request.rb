@@ -13,21 +13,18 @@ module UnityCloudBuild
       @project_id = project_id
       @build_number = build_number
       @build_target_id = build_target_id
-      @command = "curl -X GET -H \"Content-Type: application/json\" -H \"Authorization: Basic #{ENV['UNITY_CLOUD_BUILD_AUTH_TOKEN']}\" #{request_url}"
+      @command = 'curl -X GET -H "Content-Type: application/json" -H "Authorization: Basic ' \
+                 "#{ENV['UNITY_CLOUD_BUILD_AUTH_TOKEN']}\" #{request_url}"
       @response = nil
     end
 
     def request_url
       @request_url ||= File.join(
         UNITY_CLOUD_BUILD_API_URL,
-        'orgs',
-        "#{organization_id}",
-        'projects',
-        "#{project_id}",
-        'buildtargets',
-        "#{build_target_id}",
-        'builds',
-        "#{build_number}"
+        'orgs', organization_id.to_s,
+        'projects', project_id.to_s,
+        'buildtargets', build_target_id.to_s,
+        'builds', build_number.to_s
       )
     end
 
@@ -36,11 +33,9 @@ module UnityCloudBuild
     end
 
     def json_response_body
-      begin
-        @json_response_body ||= JSON.parse(response_body)
-      rescue JSON::ParserError
-        @json_response_body = {}
-      end
+      @json_response_body ||= JSON.parse(response_body)
+    rescue JSON::ParserError
+      @json_response_body = {}
     end
   end
 end

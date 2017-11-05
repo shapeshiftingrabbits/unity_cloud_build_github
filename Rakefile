@@ -2,6 +2,8 @@
 
 rake_application = Rake.application
 
-Dir[File.join(__dir__, 'tasks', '*.rake')].each { |file| rake_application.add_import file }
+Dir[File.join(__dir__, 'tasks', '*.rake')].each do |file|
+  rake_application.add_import file
+end
 
 task default: %i[spec rubocop]

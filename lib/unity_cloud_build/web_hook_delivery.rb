@@ -15,11 +15,9 @@ module UnityCloudBuild
     end
 
     def json_body
-      begin
-        @json_body ||= JSON.parse(body)
-      rescue JSON::ParserError
-        @json_body = {}
-      end
+      @json_body ||= JSON.parse(body)
+    rescue JSON::ParserError
+      @json_body = {}
     end
   end
 end

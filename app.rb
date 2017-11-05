@@ -4,7 +4,7 @@ require 'sinatra/base'
 require_relative 'lib'
 
 class UnityCloudBuildGithub < Sinatra::Application
-  post '/unity-cloud-build' do
+  post '/unity-cloud-build' do # rubocop:disable Metrics/BlockLength
     logger.info '== Received request =='
     logger.info 'Analysing parameters'
 
@@ -42,7 +42,7 @@ class UnityCloudBuildGithub < Sinatra::Application
       if build_status_request.json_response_body['lastBuiltRevision']
         logger.info "== Commit ID is #{build_status_request.json_response_body['lastBuiltRevision']} =="
       else
-        logger.info "Commit ID was not returned in response. Aborting."
+        logger.info 'Commit ID was not returned in response. Aborting.'
       end
     else
       logger.info "== Commit ID is #{@web_hook_delivery.json_body['lastBuiltRevision']} =="

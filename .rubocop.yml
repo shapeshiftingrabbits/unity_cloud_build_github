@@ -1,4 +1,11 @@
+Metrics/BlockLength:
+  Exclude:
+    - spec/**/*
 Metrics/LineLength:
   Max: 120
+  Exclude:
+    - spec/**/*
+Style/BlockDelimiters:
+  EnforcedStyle: semantic
 Style/Documentation:
   Enabled: false
