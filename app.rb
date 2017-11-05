@@ -22,25 +22,30 @@ class UnityCloudBuildGithub < Sinatra::Application
     logger.info "Signature header: #{@web_hook_delivery.signature}"
     logger.info "Body \n#{@web_hook_delivery.body}"
 
-    logger.info '== Asking Unity Cloud Build which commit is related to this build event =='
-    build_status_request = UnityCloudBuild::BuildStatusRequest.new(
-      @web_hook_delivery.json_body['orgForeignKey'],
-      @web_hook_delivery.json_body['projectGuid'],
-      @web_hook_delivery.json_body['buildNumber']
-    )
+    if @web_hook_delivery.json_body['lastBuiltRevision'].nil?
+      logger.info '== Commit ID unknown =='
+      logger.info '== Requesting commit ID from Unity Cloud Build =='
+      build_status_request = UnityCloudBuild::BuildStatusRequest.new(
+        @web_hook_delivery.json_body['orgForeignKey'],
+        @web_hook_delivery.json_body['projectGuid'],
+        @web_hook_delivery.json_body['buildNumber']
+      )
 
-    logger.info "Sending request to #{build_status_request.request_url}..."
-    logger.info build_status_request.command
+      logger.info "Sending request to #{build_status_request.request_url}..."
+      logger.info build_status_request.command
 
-    build_status_request.call!
-    logger.info 'Received response'
+      build_status_request.call!
+      logger.info 'Received response'
 
-    logger.info build_status_request.json_response_body
+      logger.info build_status_request.json_response_body
 
-    if build_status_request.json_response_body['lastBuiltRevision']
-      logger.info "Commit that triggered build is #{build_status_request.json_response_body['lastBuiltRevision']}"
+      if build_status_request.json_response_body['lastBuiltRevision']
+        logger.info "== Commit ID is #{build_status_request.json_response_body['lastBuiltRevision']} =="
+      else
+        logger.info "Commit ID was not returned in response. Aborting."
+      end
     else
-      logger.info "ID of commit that triggered the build was not returned in response. Aborting."
+      logger.info "== Commit ID is #{@web_hook_delivery.json_body['lastBuiltRevision']} =="
     end
   end
 end
