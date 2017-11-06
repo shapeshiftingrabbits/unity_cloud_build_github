@@ -19,5 +19,9 @@ module UnityCloudBuild
     rescue JSON::ParserError
       @json_body = {}
     end
+
+    def to_github_status_request
+      #
+    end
   end
 end

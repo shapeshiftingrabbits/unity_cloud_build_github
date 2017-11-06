@@ -1,0 +1,135 @@
+{
+  "projectName": "Shooter-MVP",
+  "buildTargetName": "QA Windows desktop 64-bit",
+  "projectGuid": "c7dfcb72-7070-42be-bfea-2fdd2377f3fd",
+  "orgForeignKey": "16767559418707",
+  "buildNumber": 10,
+  "buildStatus": "queued",
+  "startedBy": "Raf <mr.gonzalez.rafael@gmail.com>",
+  "platform": "standalonewindows64",
+  "local": false,
+  "scmType": "git",
+  "links": {
+    "api_self": {
+      "method": "get",
+      "href": "/api/orgs/shapeshifting-rabbits/projects/shooter-mvp/buildtargets/qa-windows-desktop-64-bit/builds/10"
+    },
+    "dashboard_url": {
+      "method": "get",
+      "href": "https://developer.cloud.unity3d.com"
+    },
+    "dashboard_project": {
+      "method": "get",
+      "href": "/build/orgs/shapeshifting-rabbits/projects/shooter-mvp"
+    },
+    "dashboard_summary": {
+      "method": "get",
+      "href": "/build/orgs/shapeshifting-rabbits/projects/shooter-mvp/buildtargets/qa-windows-desktop-64-bit/builds/10/summary"
+    },
+    "dashboard_log": {
+      "method": "get",
+      "href": "/build/orgs/shapeshifting-rabbits/projects/shooter-mvp/buildtargets/qa-windows-desktop-64-bit/builds/10/log"
+    },
+    "artifacts": []
+  }
+}
+
+
+
+
+{
+  "projectName": "Shooter-MVP",
+  "buildTargetName": "QA Windows desktop 64-bit",
+  "projectGuid": "c7dfcb72-7070-42be-bfea-2fdd2377f3fd",
+  "orgForeignKey": "16767559418707",
+  "buildNumber": 10,
+  "buildStatus": "started",
+  "startedBy": "Raf <mr.gonzalez.rafael@gmail.com>",
+  "platform": "standalonewindows64",
+  "local": false,
+  "scmType": "git",
+  "links": {
+    "api_self": {
+      "method": "get",
+      "href": "/api/orgs/shapeshifting-rabbits/projects/shooter-mvp/buildtargets/qa-windows-desktop-64-bit/builds/10"
+    },
+    "dashboard_url": {
+      "method": "get",
+      "href": "https://developer.cloud.unity3d.com"
+    },
+    "dashboard_project": {
+      "method": "get",
+      "href": "/build/orgs/shapeshifting-rabbits/projects/shooter-mvp"
+    },
+    "dashboard_summary": {
+      "method": "get",
+      "href": "/build/orgs/shapeshifting-rabbits/projects/shooter-mvp/buildtargets/qa-windows-desktop-64-bit/builds/10/summary"
+    },
+    "dashboard_log": {
+      "method": "get",
+      "href": "/build/orgs/shapeshifting-rabbits/projects/shooter-mvp/buildtargets/qa-windows-desktop-64-bit/builds/10/log"
+    },
+    "artifacts": []
+  }
+}
+
+
+{
+  "projectName": "Shooter-MVP",
+  "buildTargetName": "QA Windows desktop 64-bit",
+  "projectGuid": "c7dfcb72-7070-42be-bfea-2fdd2377f3fd",
+  "orgForeignKey": "16767559418707",
+  "buildNumber": 10,
+  "buildStatus": "success",
+  "lastBuiltRevision": "30d852ea80c5c8e32cb36918e84f654e884e4b12",
+  "startedBy": "Raf <mr.gonzalez.rafael@gmail.com>",
+  "platform": "standalonewindows64",
+  "local": false,
+  "scmType": "git",
+  "links": {
+    "api_self": {
+      "method": "get",
+      "href": "/api/orgs/shapeshifting-rabbits/projects/shooter-mvp/buildtargets/qa-windows-desktop-64-bit/builds/10"
+    },
+    "dashboard_url": {
+      "method": "get",
+      "href": "https://developer.cloud.unity3d.com"
+    },
+    "dashboard_project": {
+      "method": "get",
+      "href": "/build/orgs/shapeshifting-rabbits/projects/shooter-mvp"
+    },
+    "dashboard_summary": {
+      "method": "get",
+      "href": "/build/orgs/shapeshifting-rabbits/projects/shooter-mvp/buildtargets/qa-windows-desktop-64-bit/builds/10/summary"
+    },
+    "dashboard_log": {
+      "method": "get",
+      "href": "/build/orgs/shapeshifting-rabbits/projects/shooter-mvp/buildtargets/qa-windows-desktop-64-bit/builds/10/log"
+    },
+    "artifacts": [
+      {
+        "key": "primary",
+        "name": ".ZIP file",
+        "primary": true,
+        "show_download": true,
+        "files": [
+          {
+            "filename": "QA Windows desktop 64-bit.zip",
+            "size": 13854831,
+            "resumable": false,
+            "href": "https://unitycloud-build-user-svc-live-build.s3.amazonaws.com/16767559418707/c7dfcb72-7070-42be-bfea-2fdd2377f3fd/qa-windows-desktop-64-bit-10/QA%20Windows%20desktop%2064-bit.zip?AWSAccessKeyId=AKIAI6ZGSQWNDMF7X33A&Expires=1509126004&Signature=yqes%2FT3qzlLz%2BlHwEH5WrMV7jkc%3D&response-content-disposition=attachment%3B%20filename%3Dshapeshifting-rabbits-shooter-mvp-qa-windows-desktop-64-bit-10.zip&response-content-type=application%2Foctet-stream"
+          }
+        ]
+      }
+    ],
+    "dashboard_download_direct": {
+      "method": "get",
+      "href": "https://developer.cloud.unity3d.com/build/orgs/shapeshifting-rabbits/projects/shooter-mvp/buildtargets/qa-windows-desktop-64-bit/builds/10/download/direct/"
+    },
+    "dashboard_download": {
+      "method": "get",
+      "href": "https://developer.cloud.unity3d.com/build/orgs/shapeshifting-rabbits/projects/shooter-mvp/buildtargets/qa-windows-desktop-64-bit/builds/10/download/"
+    }
+  }
+}

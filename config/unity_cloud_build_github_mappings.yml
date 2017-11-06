@@ -1,0 +1,6 @@
+organisations: [
+    16767559418707: shapeshiftingrabbits
+  ]
+  projects: [
+    Shooter-MVP: Shooter-MVP # use UCB's "projectName" or "projectGuid" property value
+  ]
